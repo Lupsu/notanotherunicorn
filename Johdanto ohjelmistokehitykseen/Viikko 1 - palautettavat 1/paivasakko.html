@@ -21,7 +21,10 @@ Tee ohjelma, joka laskee päiväsakon määrän.  Päiväsakon määrä on (nett
 	
 	<script>
 	function laskePaivasakko() {
-	
+	let ntulot = Number(document.getElementById("nettotulot").value);
+	let paivasakko = (ntulot - 255) / 60;
+	document.getElementById("vastaus").innerHTML = "<p>Päiväsakko on " + 
+	paivasakko.toFixed(2) + " euroa</p>";
 	}
 	</script>
 </body>

@@ -19,7 +19,9 @@
 
 	<script>
 		function muunnaMinuutit() {
-
+			let aaika = Number(document.getElementById("minuutit").value);
+			let ajoaika = aaika / 60;
+			document.getElementById("vastaus").innerHTML = "<p>Ajoaika on " + ajoaika + " tuntia.</p>"
 		}
 	</script>
 </body>

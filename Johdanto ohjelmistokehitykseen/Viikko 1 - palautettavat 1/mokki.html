@@ -37,7 +37,10 @@ ja kertoo vuokran per henkilö.
 	
 	<script>
 	function laskeVuokra() {
-	
+	let vuokranmaara = document.getElementById("vuokra").value;
+	let osallistujienmaara = document.getElementById("maara").value;
+	let vuokraperhenkilo = vuokranmaara / osallistujienmaara;
+	document.getElementById("vastaus").innerHTML = "<p>Mökkivuokra per henkilö on " + vuokraperhenkilo + "€.</p>";
 	}
 </script>
 </body>

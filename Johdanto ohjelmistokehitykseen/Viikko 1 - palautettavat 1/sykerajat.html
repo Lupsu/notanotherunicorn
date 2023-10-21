@@ -26,7 +26,10 @@ Sykerajat lasketaan siten, että yläraja on (220-ikä) * 0.85 ja alaraja (220-i
 
 	<script>
 		function kerro() {
-
+			let sika = Number(document.getElementById("ika").value);
+			let sykemax = (220 - sika) * 0.85;
+			let sykemin = (220 - sika) * 0.65;
+			document.getElementById("vastaus").innerHTML = "<p>Sykkeen yläraja on " + sykemax + " ja alaraja " + sykemin + ".</p>";
 		}
 
 	</script>
