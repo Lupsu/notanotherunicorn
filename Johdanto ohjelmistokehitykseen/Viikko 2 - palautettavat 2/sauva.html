@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Sauvan pituus</title>
+	<!--  
+	Ohjelma laskee sauvakävelyssä, perinteisessä ja luisteluhiihdossa käytettävän sauvan pituuden. 
+	Kaavat sauvan pituuden laskemiseen ovat:
+	luistelu: käyttäjän pituus * 0.9 
+	perinteinen: käyttäjän pituus * 0.85 
+	kävely: käyttäjän pituus * 0.68 
+	-->
+	<style>
+		label {
+			display: block;
+			width: 5em;
+			float: left;
+		}
+	</style>
+</head>
+
+<body>
+	<h3>Sauvan pituus</h3>
+
+	<form>
+		<p>
+			<label>Pituutesi:</label>
+			<input type="text" id="pituus" size="3"> cm
+		</p>
+		<p>
+			<label>Laji:</label>
+			<input type="text" id="laji" size="10">
+		</p>
+		<input type="button" id="painike" value="Laske sauvan pituus" onclick="laskeSauva()">
+	</form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<p id="vastaus"></p>
+
+	<script>
+		function laskeSauva() {
+		
+		}
+	</script>
+</body>
+
+</html>

@@ -20,8 +20,9 @@
 	<script>
 		function muunnaMinuutit() {
 			let aaika = Number(document.getElementById("minuutit").value);
-			let ajoaika = aaika / 60;
-			document.getElementById("vastaus").innerHTML = "<p>Ajoaika on " + ajoaika + " tuntia.</p>"
+			let ajoaikaminuutit = aaika % 60;
+			let ajoaikatunnit = aaika / 60;
+			document.getElementById("vastaus").innerHTML = "Tunteja " + Math.floor(ajoaikatunnit) + " ja minuutteja " + ajoaikaminuutit + "<br>,pyöristettynä lähimpään tuntiin ylöspäin " + Math.ceil(ajoaikatunnit);
 		}
 	</script>
 </body>

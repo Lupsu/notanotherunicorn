@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Sähkötarjous</title>
+<!-- 
+Ohjelma kysyy käyttäjän sähkötarjouksen hinnan ja vertaa sitä vuoden 2022 pörssisähkön keskihintaan, 
+joka oli 18,743 senttiä/kWh.
+Jos tarjouksen hinta on alle 18, kerro hinnan olevan syyskuun keskihintaa alempi.
+Jos tarjouksen hinta on 18-19 kerro hinnan olevan suurin piirtein keskihintainen.
+Jos tarjouksen hinta on yli 19, kerro hinnan olevan syyskuun keskihintaa kalliimpi
+
+ -->
+</head>
+
+<body>
+	<h3>Sähkötarjous</h3>
+
+	<form>
+		<label>Tarjoushinta:</label>
+		<input type="text" id="hintatarjous" size="3"> snt/kWh
+
+		<input type="button" id="painike" value="Kerro" onclick="kerro()">
+	</form>
+
+	<p id="vastaus"></p>
+
+	<script>
+		function kerro() {
+			
+		}
+	</script>
+</body>
+
+</html>

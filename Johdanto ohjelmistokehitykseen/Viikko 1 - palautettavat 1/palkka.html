@@ -37,17 +37,13 @@ Käteen jäävä osuus on palkka – vero – työttömyysvakuutus – työeläk
 
 	<script>
 		function laskePalkka() {
-			let fpalkka = Number(document.getElementById("palkka").value);
+			let fpalkk = Number(document.getElementById("palkka").value);
 			let fveroprosentti = Number(document.getElementById("veroprosentti").value);
 			let fvero = fpalkka * fveroprosentti  / 100.0;
 			let tyelvakmaks = fpalkka * 0.015;
 			let tyelmaks = fpalkka * 0.0715;
 			let kateen = fpalkka - fvero - tyelvakmaks - tyelmaks;
-			document.getElementById("vastaus").innerHTML = 
-				"<p>Veron osuus on " + fvero + "€.</p>" +
-				"<p>Työeläkevakuutusmaksun osuus on " + tyelvakmaks + "€.</p>" +
-				"<p>Työeläkemaksun osuus on " + tyelmaks + "€.</p>" +
-				"<p>Käteen jää " + kateen + "€.</p>";
+			document.getElementById("vastaus").innerHTML = "Käteen jää " + kateen.toFixed(2);
 		}
 	</script>
 </body>

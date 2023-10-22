@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Polttoaine</title>
+    <!--  
+Ohjelma kertoo, onko 95, 98 vain diesel kalleinta.
+	-->
+    <style>
+        label {
+            display: block;
+            width: 5em;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Polttoaine</h3>
+
+    <form>
+
+        <label>95:</label>
+        <input type="text" id="b95" size="5"><br>
+
+        <label>98:</label>
+        <input type="text" id="b98" size="5"><br>
+
+        <label>Diesel:</label>
+        <input type="text" id="diesel" size="5"><br>
+
+        <input type="button" id="painike" value="Kallein" onclick="kerro()">
+    </form>
+
+    <!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+    <p id="vastaus"></p>
+
+    <script>
+        function kerro() {
+           
+        }
+    </script>
+</body>
+
+</html>
