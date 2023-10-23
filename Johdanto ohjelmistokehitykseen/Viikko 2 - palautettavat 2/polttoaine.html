@@ -38,7 +38,18 @@ Ohjelma kertoo, onko 95, 98 vain diesel kalleinta.
 
     <script>
         function kerro() {
-           
+           let ab95 = Number(document.getElementById("b95").value);
+           let ab98 = Number(document.getElementById("b98").value);
+           let adiesel = Number(document.getElementById("diesel").value);
+           let kallein;
+           if (ab95 > ab98 && ab95 > adiesel) {
+            kallein = "95";
+           } else if (ab98 > ab95 && ab98 > adiesel) {
+            kallein = "98";
+           } else {
+            kallein = "Diesel";
+           }
+           document.getElementById("vastaus").innerHTML = kallein + " on kallein";
         }
     </script>
 </body>

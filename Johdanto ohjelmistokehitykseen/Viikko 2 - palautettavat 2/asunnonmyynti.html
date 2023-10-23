@@ -26,7 +26,15 @@ Esimerkiksi jos asunnon myyntihinta on 100000 euroa, välityspalkkio on 4960 eur
 
 	<script>
 		function laskePalkkio() {
-			
+			let ahinta = Number(document.getElementById("hinta").value);
+			let valitysp = (ahinta * (4.96 / 100));
+			let valitysploppu;
+			if (valitysp < 3100) {
+				valitysploppu = 3100;
+			} else {
+				valitysploppu = valitysp;
+			}
+			document.getElementById("vastaus").innerHTML = "Myyntipalkkio on " + valitysploppu.toFixed(2) + " euroa"
 		}
 	</script>
 </body>

@@ -40,7 +40,17 @@
 
 	<script>
 		function laskeSauva() {
-		
+		let apituus = Number(document.getElementById("pituus").value);
+		let alaji = document.getElementById("laji").value;
+		let avastaus;
+		if (alaji == "luistelu") {
+			avastaus = apituus * 0.9;
+		} else if (alaji == "perinteinen") {
+			avastaus = apituus * 0.85;
+		} else {
+			avastaus = apituus * 0.68;
+		}
+		document.getElementById("vastaus").innerHTML = "Sauvan pituus on " + avastaus.toFixed(0) + " cm";
 		}
 	</script>
 </body>

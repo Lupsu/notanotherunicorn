@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Paino</title>
+<!-- 
+Mökkiläiset tekevät vedon siitä, pystyvätkö vetoon osallistujat 
+pudottamaan painoaan 10% seitsemän viikon aikana. Tee ohjelma, mikä 
+kysyy lähtöpainon ja kertoo, mikä painon pitäisi olla kunkin viikon 
+lopussa, jotta tavoite saavutetaan.
+ -->
+</head>
+
+<body>
+	<h3>Paino</h3>
+
+	<form>
+		<label>Lähtöpaino:</label>
+		<input type="text" id="paino" size="3">
+		<input type="button" id="painike" value="Näytä tavoitepainot" onclick="naytaTavoitepainot()">
+	</form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<p id="vastaus"></p>
+
+	<script>
+		function naytaTavoitepainot() {
+			let apaino = Number(document.getElementById("paino").value);
+			let painonlasku = (apaino * 0.1) / 7;
+			let teksti = "";
+			for (let i = 1; i<=7; i++) {
+				apaino = apaino - painonlasku;
+				teksti = teksti + i + ". viikon jälkeen " + apaino.toFixed(1) + "<br>";
+				document.getElementById("vastaus").innerHTML = teksti;
+			}
+		}
+	</script>
+</body>
+
+</html>

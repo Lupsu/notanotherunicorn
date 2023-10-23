@@ -20,7 +20,22 @@
 
 	<script>
 		function kerroArvosana() {
-
+			let apisteet = Number(document.getElementById("pisteet").value);
+			let arvosana;
+			if (apisteet >= 27) {
+				arvosana = "kiitettävä";
+			} else if (apisteet < 27 && apisteet >= 24) {
+				arvosana = "erinomainen";
+			} else if (apisteet <= 23 && apisteet >= 21) {
+				arvosana = "hyvä";
+			} else if (apisteet <= 20 && apisteet >= 18) {
+				arvosana = "tyydyttävä";
+			} else if (apisteet <= 17 && apisteet >= 15) {
+				arvosana = "heikko";
+			} else {
+				arvosana = "hylätty";
+			}
+			document.getElementById("vastaus").innerHTML = "Arvosana on " + arvosana;
 		}
 	</script>
 </body>

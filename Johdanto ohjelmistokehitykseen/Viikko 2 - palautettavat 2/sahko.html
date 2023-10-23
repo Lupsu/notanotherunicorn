@@ -28,7 +28,17 @@ Jos tarjouksen hinta on yli 19, kerro hinnan olevan syyskuun keskihintaa kalliim
 
 	<script>
 		function kerro() {
-			
+			let ahintatarjous = Number(document.getElementById("hintatarjous").value);
+			let keskihinta2022 = 18.743;
+			let vastausteksti;
+			if (ahintatarjous < 18) {
+				vastausteksti = "alhaisempi";
+			} else if (ahintatarjous >= 18 && ahintatarjous <= 19) {
+				vastausteksti = "vastaava";
+			} else {
+				vastausteksti = "kalliimpi";
+			}
+			document.getElementById("vastaus").innerHTML = "Tarjous on vuoden 2022 keskihintaa " + keskihinta2022.toFixed(3) + " " + vastausteksti;
 		}
 	</script>
 </body>

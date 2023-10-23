@@ -24,9 +24,23 @@
 
 	<script>
 		function kerro() {
-			
+			let anopeus = Number(document.getElementById("nopeus").value);
+			let rajoitus = 60;
+			let erotus = anopeus - rajoitus;
+			let avastaus;
+			if (erotus <= 0) {
+				avastaus = "Ei ylinopeutta"
+			} else if (erotus > 0 && erotus < 11) {
+				avastaus = "Liikennevirhemaksu on 100";
+			} else if (erotus >= 11 && erotus <= 15) {
+				avastaus = "Liikennevirhemaksu on 170";
+			} else if (erotus >= 16 && erotus <= 20) {
+				avastaus = "Liikennevirhemaksu on 200";
+			} else {
+				avastaus = "Menee päiväsakolle"
+			}
+			document.getElementById("vastaus").innerHTML = avastaus;
 		}
-
 	</script>
 </body>
 
