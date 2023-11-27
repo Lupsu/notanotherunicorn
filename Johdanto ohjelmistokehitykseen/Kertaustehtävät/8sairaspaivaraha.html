@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Sairaspäiväraha</title>
+	<style>
+		label {
+			display: block;
+			width: 7em;
+			float: left;
+		}
+	</style>
+</head>
+
+<body>
+	<h3>Sairaspäiväraha</h3>
+	<form>
+		<p>
+			<label>Vuositulot </label>
+			<input type="text" id="tulot">
+		</p>
+		<p>
+			<label>Sairaspäivien määrä </label>
+			<input type="text" id="paivat">
+		</p>
+		<p>
+			<input type="button" value="Laske sairaspäiväraha" onclick="laske()">
+		</p>
+	</form>
+
+	<div id="vastaus"></div>
+
+	<script>
+		function laske() {
+			let tulot = Number(document.getElementById("tulot").value);
+			let paivat = Number(document.getElementById("paivat").value);
+		
+			document.getElementById("vastaus").innerHTML = "Kirjoita vastaus tänne";
+		}
+
+		// Funktio selvittää tuljen perusteell yhden sairaspäivärahan suuruuden
+		function laskePaivaraha(tulot) {
+			
+		}
+
+		// Funktio laskee kokonaiskorvauksen sairaspäivärahan ja sen kestopäivien perusteella
+		function laskeKorvaus(paivaraha, paivat) {
+		
+		}
+	</script>
+</body>
+
+</html>

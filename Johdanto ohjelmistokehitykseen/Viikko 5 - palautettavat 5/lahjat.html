@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lahjat</title>
+    <style>
+        label {
+            display: block;
+            width: 6em;
+            float: left;
+        }
+    </style>
+    <!--
+        Taulukossa on lahjatoiveita muodossa saaja;toive. 
+        JavaScriptissä on merkkijonon käsittelyyn metodi split, 
+        jolla merkkijono voidaan pilkkoa osiin erotinmerkin perusteella. 
+        Tee ohjelma, jolla toiveet voidaan listata.
+    -->
+</head>
+
+<body>
+    <h3>Lahjat</h3>
+
+    <!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+    <p id="vastaus"></p>
+
+    <script>
+        let lahjatoiveet = ["Maija;Lomamatka", "Matti;Mökkiloma", "Liisa;Ulkomaan matka", "Leena;Hotelliloma", "Erkki;Kotimaan matka"];
+        function nayta() {
+        let nimi = "";
+        let toive = "";
+        let teksti = "";
+        let osat = [];
+        let paikka = osat.length;
+        for (let i = 0; i < lahjatoiveet.length; i++) {
+            osat = lahjatoiveet[i].split(";");
+            nimi = osat[paikka];
+            toive = osat[paikka + 1];
+            teksti = teksti + nimi + " toivoo lahjaa " + toive + "<br>";
+            document.getElementById("vastaus").innerHTML = teksti;
+        }
+        }
+
+        nayta();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Syntymävuodenaika</title>
+	<!-- 
+Ohelma kysyy käyttäjältä syntymäkuukauden numeron ja kertoo vuodenajan, jolloin käyttäjä on syntynyt.
+ Maalis-, huhti ja toukokuu: kevät
+ kesä-, heinä- ja elokuu: kesä
+ syy-, loka- ja marraskuu: syksy
+ joulu-, tammi- ja helmikuu: talvi
+ -->
+</head>
+
+<body>
+	<h3>Syntymävuodenaika</h3>
+	<form>
+		<label>Syntymäkuukausi:</label>
+		<input type="text" id="skuukausi" size="2">
+		<input type="button" value="Kerro vuodenaika" onclick="kerroVuodenaika()">
+	</form>
+
+	<!-- Vastaus kirjoitetaan alla olevaan elementtiin JavaScriptillä -->
+	<div id="vastaus"></div>
+
+	<script>
+
+		function kerroVuodenaika() {
+			// Lomakekentän kuukausi arvo kokonaislukuna
+			let kuukausi = Number(document.getElementById("skuukausi").value);
+			
+			document.getElementById("vastaus").innerHTML = "Kirjoita vastaus tänne";
+		}
+	</script>
+</body>
+
+</html>

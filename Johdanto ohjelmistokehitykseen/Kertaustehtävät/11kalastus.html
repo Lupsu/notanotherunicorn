@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Kalat</title>
+<!-- 
+Näytä kalastuksen tietoja
+ -->
+	<style>
+		label {
+			display: block;
+			width: 6em;
+			float: left;
+		}
+	</style>
+</head>
+
+<body>
+	<h3>Kalat</h3>
+	<form>
+		<p>
+			<label>Laji: </label>
+			<input type="text" id="laji"><br>
+			<label>Koko:</label>
+			<input type="text" id="koko"><br>
+			<input type="button" value="Lisää" onclick="lisaa()">
+		</p>
+
+		<p>
+			<input type="button" value="Hae kaikki" onclick="listaa()">
+		</p>
+
+		<p>
+			<label>Laji: </label>
+			<input type="text" id="haettava">
+			<input type="button" value="Hae saalis" onclick="hae()">
+		</p>
+	</form>
+
+	<div id="vastaus"></div>
+
+	<script>
+		let kalat = [
+			{ laji: "Ahven", koko: 230, },
+			{ laji: "Kuha", koko: 2000, },
+			{ laji: "Ahven", koko: 200, },
+			{ laji: "Ahven", koko: 175, },
+			{ laji: "Kuha", koko: 1590, },
+			{ laji: "Ahven", koko: 175, },
+		];
+
+		// Funktio lisää uuden kalan objektitaulukkoon uuden aklan
+		function lisaa() {
+		
+		}
+
+		function hae() {
+			let haettava = document.getElementById("haettava").value;
+
+	
+			document.getElementById("vastaus").innerHTML = "Kirjoita vastaus tänne";
+		}
+
+		function listaa() {
+	
+			document.getElementById("vastaus").innerHTML = "Kirjoita vastaus tänne";
+		}
+
+
+	</script>
+</body>
+
+</html>

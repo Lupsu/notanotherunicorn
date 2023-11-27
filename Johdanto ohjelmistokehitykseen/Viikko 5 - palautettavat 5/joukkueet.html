@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Joukkueet</title>
+</head>
+
+<body>
+	<h3>Joukkueet</h3>
+
+	<p id="vastaus"></p>
+
+	<script>
+		let joukkueet = ["Ilves", "Lukko", "TPS", "Tappara", "Jukurit", "HIFK", "Ässät"];
+
+		function nayta() {
+			let teksti = "";
+			for (let i = 0; i < joukkueet.length; i++) {
+			teksti = teksti + joukkueet[i] + "<br>";
+			}
+			document.getElementById("vastaus").innerHTML = 
+			"<p>" + teksti + "</p>";
+		}
+		nayta();
+	</script>
+</body>
+
+</html>

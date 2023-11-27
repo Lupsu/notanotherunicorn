@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ikä</title>
+<!-- 
+Tee ohjelma, joka tarkastaa iän.
+•	trim()-metodilla poistetaan merkkijonon alusta ja lopusta tyhjät merkit
+•	length kertoo merkkijonon pituuden. Jos pituus on 0, merkkijono on tyhjä.
+•	isNaN()-funktio kertoo, onko merkkijonon sisältö numeerinen vai ei.
+-->
+</head>
+
+<body>
+    <h3>Ikä</h3>
+
+    <form>
+        <label>Ikä</label>
+        <input type="text" id="ika" size="3">
+        <input type="button" id="painike" value="Tarkasta ikä" onclick="tarkastaIka()">
+    </form>
+
+    <p id="vastaus"></p>
+
+    <script>
+        function tarkastaIka() {
+        let aika = document.getElementById("ika").value;
+        let saika = aika.trim();
+        let pituus = saika.length;
+        if (pituus <= 0) {
+            document.getElementById("vastaus").innerHTML = "Ikä on tyhjä";
+        } else if (isNaN(saika) == true) {
+            document.getElementById("vastaus").innerHTML = "Ikä ei ole luku";
+        } else {
+            document.getElementById("vastaus").innerHTML = "Ikä kelpaa luvuksi";
+        }
+        }
+    </script>
+</body>
+
+</html>

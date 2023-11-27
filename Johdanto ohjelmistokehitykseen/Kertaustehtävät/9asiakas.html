@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Asiakas</title>
+	<!-- 
+Näytä asuntomyynti-ilmoitus. 
+ -->
+</head>
+
+<body>
+	<h3>Asiakas</h3>
+
+	<div id="vastaus"></div>
+
+	<script>
+		let asiakas =
+		{
+			etunimi: "Matti",
+			sukunimi: "Mainio",
+			osoite:
+			{
+				lahiosoite: "Kunnonkatu 99",
+				paikkakunta: "Mainiokylä",
+				postinumero: "12345"
+			},
+			puhelin:
+				[
+					{
+						tyyppi: "koti",
+						numero: "1234567"
+					},
+					{
+						tyyppi: "työ",
+						numero: "7654321"
+					}
+				]
+		};
+
+		function listaa() {
+		
+			document.getElementById("vastaus").innerHTML = "Kirjoita vastaus tänne";
+		}
+
+		listaa();
+	</script>
+</body>
+
+</html>

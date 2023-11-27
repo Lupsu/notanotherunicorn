@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Päivämäärä</title>
+	<!-- 
+Ohjelma kysyy käyttäjältä päivämäärän muodossa vvvv-pp-kk ja muuntaa sen muotoon pp.kk.vvvv.
+ -->
+</head>
+
+<body>
+	<h3>Päivämäärä</h3>
+
+	<form>
+		<label>Päivämäärä (vvvv-kk-pp):</label>
+		<input type="text" id="paivamaara" size="10">
+		<input type="button" value="Muunna" onClick="muunna()">
+	</form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<div id="vastaus"></div>
+
+	<script>
+
+		function muunna() {
+			let paivamaara = document.getElementById("paivamaara").value; // 2023-05-10
+
+			document.getElementById("vastaus").innerHTML = "Kirjoita vastaus tänne";
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Työtehtävä</title>
+	<style>
+		label {
+			display: block;
+			width: 5em;
+			float: left;
+		}
+	</style>
+<!-- 
+Tee ohjelma, jolla voidaan kirjata työsuoritus ja laskea sen hinta. 
+Työn tuntihinta on 60 euroa. 
+ -->
+</head>
+
+<body>
+	<h3>Työtehtävä</h3>
+
+	<form>
+		<p>
+			<label>Alkoi:</label>
+			<input type="text" id="alkoi" size="5">
+		</p>
+		<p>
+			<label>Päättyi:</label>
+			<input type="text" id="paattyi" size="5">
+		</p>
+		<p>
+			<input type="button" id="painike" value="Laske" onclick="laske()">
+		</p>
+	</form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<p id="vastaus"></p>
+
+	<script>
+
+		function laske() {
+			let alkoi = document.getElementById("alkoi").value;
+			let paattyi = document.getElementById("paattyi").value;
+			let tuntihinta = 60;
+			let tyonhinta = laskeTyohinta(alkoi, paattyi, tuntihinta);
+			document.getElementById("vastaus").innerHTML = "Työn hinta on " + tyonhinta.toFixed(2) + " euroa";
+		}
+
+		function laskeTyohinta(alkoi, paattyi, tuntihinta) {
+			let alkoipituus = alkoi.length;
+			let paattyipituus = paattyi.length;
+			let alkutunnit = 0;
+			let alkuminuutit = 0;
+			let paattyitunnit = 0;
+			let paattyiminuutit = 0;
+			let tyotunnit = 0;
+			let tyominuutittunteina = 0;
+			let tyonhinta = 0;
+			if (alkoipituus == 5) {
+				alkutunnit = alkoi.substring(0, 2);
+				alkuminuutit = alkoi.substring(3, 5);
+			} else {
+				alkutunnit = alkoi.substring(0, 1);
+				alkuminuutit = alkoi.substring(2, 4);
+			}
+			if (paattyipituus == 5) {
+				paattyitunnit = paattyi.substring(0, 2);
+				paattyiminuutit = paattyi.substring(3, 5);
+			} else {
+				paattyitunnit = paattyi.substring(0, 1);
+				paattyiminuutit = paattyi.substring(2, 4);
+			}
+			tyotunnit = tyotunnit + (paattyitunnit - alkutunnit) + ((paattyiminuutit - alkuminuutit) / 60);
+			tyonhinta = tyonhinta + (tyotunnit * tuntihinta);
+			return tyonhinta;
+		}
+	</script>
+</body>
+
+</html>

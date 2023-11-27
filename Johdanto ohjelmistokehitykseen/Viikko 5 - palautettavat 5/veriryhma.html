@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Veriryhmät</title>
+<!-- 
+Tee ohjelma, joka kertoo, montako kertaa annettu veriryhmä esiintyy taulukossa.
+ -->
+</head>
+
+<body>
+	<h3>Veriryhmät</h3>
+
+	<form>
+		<label>Haettava veriryhmä:</label>
+		<input type="text" id="haettava" size="4">
+		<input type="button" id="painike" value="kerro" onclick="kerro()">
+	</form>
+
+	<p id="vastaus"></p>
+
+	<script>
+		let veriryhmat = ["A+", "O-", "AB+", "O+", "AB+", "B+", "AB+", "O-", "AB+", "0+", "AB+"];
+		function kerro() {
+			let etsittavaveriryhma = document.getElementById("haettava").value;
+			let lukumaara = 0;
+			for (let i = 0; i < veriryhmat.length; i++) {
+				if (veriryhmat[i] == etsittavaveriryhma) {
+					lukumaara = lukumaara + 1;
+				}
+			}
+			document.getElementById("vastaus").innerHTML = "Veriryhmiä " + etsittavaveriryhma + " on " + lukumaara + " kappaletta";
+		}
+
+	</script>
+</body>
+
+</html>

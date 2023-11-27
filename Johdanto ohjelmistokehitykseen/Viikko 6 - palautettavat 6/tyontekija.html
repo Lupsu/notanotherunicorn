@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Työntekijä</title>
+</head>
+
+<body>
+    <h3>Työntekijä</h3>
+
+    <p id="vastaus"></p>
+
+    <script>
+
+        let tiedot = {
+            nimi: "Jere Lehtinen",
+            nimike: "Päävalmentaja",
+            yritys: "SUOMEN JÄÄKIEKKOLIITTO"
+        }
+
+        function nayta() {
+            document.getElementById("vastaus").innerHTML = tiedot.nimi + " on " + tiedot.nimike + " yrityksessä " + tiedot.yritys;
+        }
+
+        nayta();
+    </script>
+</body>
+
+</html>

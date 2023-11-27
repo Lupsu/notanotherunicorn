@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Nimet</title>
+	<style>
+		label {
+			display: block;
+			width: 5em;
+			float: left;
+		}
+	</style>
+</head>
+
+<body>
+	<h3>Nimet</h3>
+
+	<form>
+		<p>
+			<label>Etunimi</label>
+			<input type="text" id="etunimi" size="15">
+		</p>
+		<p>
+			<label>Sukunimi</label>
+			<input type="text" id="sukunimi" size="15">
+		</p>
+		<input type="button" id="painike" value="Näytä" onclick="nayta()">
+
+	</form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<p id="vastaus"></p>
+
+	<script>
+		function nayta() {
+			let aetunimi = document.getElementById("etunimi").value;
+			let asukunimi = document.getElementById("sukunimi").value;
+			let metunimi = "";
+			let msukunimi = "";
+			let nimi = "";
+			nimi = aetunimi;
+			metunimi = muutaNimi(nimi);
+			nimi = asukunimi;
+			msukunimi = muutaNimi(nimi);
+			document.getElementById("vastaus").innerHTML = metunimi + " " + msukunimi;
+		}
+
+		function muutaNimi(nimi) {
+			let ensimmainen = "";
+			let loput = "";
+			let yhdessa = "";
+			ensimmainen = nimi.charAt(0);
+			ensimmainen = ensimmainen.toUpperCase();
+			loput = nimi.toLowerCase();
+			loput = loput.substring(1);
+			yhdessa = ensimmainen + loput;
+			return yhdessa;
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Parkki</title>
+	<!-- 
+Tee ohjelma, jolla voidaan laskea parkkimaksu. 
+ParkkiPojat veloittaa 4 euroa/tunti. Maksimiveloitus on 30 euroa. 
+Tee ohjelma, joka kysyy asiakkaan pysäköintiajan ja näyttää parkkimaksun suuruuden.
+
+Tee ohjelmaan funktio:
+laskeMaksu(parkkiaika)
+Funktio laskee ja palauttaa return-lauseella parkkimaksun suuruuden. Parametrina on parkkiaika.
+ -->
+</head>
+
+<body>
+	<h3>Parkki</h3>
+
+	<form>
+		<label>Parkkiaika:</label>
+		<input type="text" id="parkkiaika" size="2" tuntia>
+		<input type="button" value="Laske" onclick="laske()">
+	</form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<div id="vastaus"></div>
+
+	<script>
+
+		function laske() {
+			// Lomakekentän arvo
+			let parkkiaika = Number(document.getElementById("parkkiaika").value);
+
+			
+			document.getElementById("vastaus").innerHTML = "Kirjoita vastaus tänne";
+		}
+
+		// Funktio selvittää parkkiajan perusteella parkkimaksun
+		function laskeMaksu(parkkiaika) {
+	
+		}
+	</script>
+</body>
+
+</html>

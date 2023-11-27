@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Suoritukset</title>
+<!-- 
+Tee ohjelma, jolla voidaan hakea alla olevasta objektitaulukosta suorituksia. 
+Tehtävä on haasteellinen.
+-->
+</head>
+
+<body>
+    <h3>Suoritukset</h3>
+    <form>
+        <label>Kurssitunnus</label>
+        <input type="text" id="tunnus" size="11">
+        <input type="button" id="painike" value="Hae" onclick="hae()">
+    </form>
+
+    <p id="vastaus"></p>
+
+    <script>
+        let suoritukset = [{
+            nimi: "Johdanto digitaalisiin palveluihin",
+            tunnus: "DIG001IT1A",
+            arvosanat: [
+                { paiva: "14.03.2023", arvosana: "3" },
+                { paiva: "21.03.2023", arvosana: "2" },
+                { paiva: "02.04.2023", arvosana: "4" }
+            ]
+        },
+        {
+            nimi: "Johdanto liiketoimintalähtöiseen ICT:hen",
+            tunnus: "ICB001IT1A",
+            arvosanat: [
+                { paiva: "15.03.2023", arvosana: "4" }
+            ]
+        },
+        {
+            nimi: "Johdanto ICT-infrastruktuuriin ja pilvipalveluihin",
+            tunnus: "ICI001IT1A",
+            arvosanat: [
+                { paiva: "16.03.2023", arvosana: "1" },
+                { paiva: "23.03.2023", arvosana: "4" }
+            ]
+        }];
+
+        function hae() {
+            let hakusana = document.getElementById("tunnus").value;
+            let teksti = "";
+            let paikka = 0;
+            let loytyi = false;
+            while (loytyi == false && paikka < suoritukset.length) {
+                if (suoritukset[paikka].tunnus == hakusana) {
+                    loytyi = true;
+                    }
+                     else {
+                        paikka = paikka + 1;
+                    }
+                }
+            if (loytyi == true) {
+                for (let i = 0; i < suoritukset[paikka].arvosanat.length; i++) {
+                    teksti = teksti + suoritukset[paikka].arvosanat[i].paiva + " arvosana " + suoritukset[paikka].arvosanat[i].arvosana + "<br>";
+                    document.getElementById("vastaus").innerHTML = teksti;
+                    }
+                } else {
+                    document.getElementById("vastaus").innerHTML = "Suorituksia ei ole tunnuksella " + hakusana;
+                }
+            }
+    </script>
+</body>
+
+</html>

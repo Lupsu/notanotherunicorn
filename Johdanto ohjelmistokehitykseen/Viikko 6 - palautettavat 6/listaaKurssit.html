@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Kurssilistaus</title>
+<!-- 
+Tee ohjelma, joka listaa objektitaulukossa olevat kurssit.
+ -->
+</head>
+
+<body>
+	<h3>Kurssit</h3>
+
+	<p id="vastaus"></p>
+
+	<script>
+		let kurssit = [{
+			nimi: "Johdanto digitaalisiin palveluihin",
+			tunnus: "DIG001IT1A",
+			laajuus: 5,
+			ajoitus: "1. lukukausi"
+		}, {
+			nimi: "Johdanto ohjelmistokehitykseen",
+			tunnus: "SOF001IT1A",
+			laajuus: 5,
+			ajoitus: "1. lukukausi"
+		}, {
+			nimi: "Johdanto liiketoimintalähtöiseen ICT:hen",
+			tunnus: "ICB001IT1A",
+			laajuus: 5,
+			ajoitus: "1. lukukausi"
+		}, {
+			nimi: "Johdanto ICT-infrastruktuuriin ja pilvipalveluihin",
+			tunnus: "ICI001IT1A",
+			laajuus: 5,
+			ajoitus: "1. lukukausi"
+		}];
+
+		function listaaKurssit() {
+			let teksti = "";
+			for (let i = 0; i<kurssit.length; i++) {
+				teksti = teksti +
+				"<p>Tunnus: " + kurssit[i].tunnus + "<br>" +
+				"Nimi: " + kurssit[i].nimi + "<br>" +
+				"Laajuus: " + kurssit[i].laajuus + "<br>" +
+				"Ajoitus: " + kurssit[i].ajoitus + "</p>";
+				document.getElementById("vastaus").innerHTML = teksti;
+			}
+		}
+
+		// Kutsutaan funktioita, joka listaa tiedot
+		listaaKurssit();
+	</script>
+</body>
+
+</html>
