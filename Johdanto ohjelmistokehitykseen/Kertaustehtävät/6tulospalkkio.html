@@ -26,16 +26,18 @@ Tee ohjelma, joka laskee tulospalkkion määrän.
 		function kerroTulospalkkio() {
 			// Lomakekentän arvo
 			let kuukausipalkka = Number(document.getElementById("kuukausipalkka").value);
+			let tulospalkka = laskeTulospalkka(kuukausipalkka);
 
-
-			document.getElementById("vastaus").innerHTML = "Kirjoita vastaus tänne";
+			document.getElementById("vastaus").innerHTML = "Tulospalkkio on " + tulospalkka.toFixed(2) + " euroa.";
 		}
 
 		// Funktio saa parametrina kuukausiplakan
 		// Funktio laskee kuukausipalkan perusteella tulospalkkion
 		// Funktio palauttaa return lauseella laskennan tuloksen eli tulospalkkiom
 		function laskeTulospalkka(kuukausipalkka) {
-		
+		let tulospalkka = 0;
+		tulospalkka = kuukausipalkka * 0.1;
+		return tulospalkka;
 		}
 	</script>
 </body>

@@ -24,9 +24,18 @@ Ohjelma kysyy käyttäjältä päivämäärän muodossa vvvv-pp-kk ja muuntaa se
 
 		function kerro() {
 			let paivamaara = document.getElementById("paivamaara").value;
-
-
-			document.getElementById("vastaus").innerHTML = "Kirjoita vastaus tänne";
+			let purku = paivamaara.split("-");
+			let pvm = new Date(purku[0], purku[1] - 1, purku[2]);
+			let viikonpaiva = pvm.getDay();
+			let paiva;
+			if (viikonpaiva == 0) { paiva = "sunnuntai"; }
+			else if (viikonpaiva == 1) { paiva = "maanantai"; }
+			else if (viikonpaiva == 2) { paiva = "tiistai"; }
+			else if (viikonpaiva == 3) { paiva = "keskiviikko"; }
+			else if (viikonpaiva == 4) { paiva = "torstai"; }
+			else if (viikonpaiva == 5) { paiva = "perjantai"; }
+			else { paiva = "lauantai"; }
+			document.getElementById("vastaus").innerHTML = "Tänään on " + paiva;
 		}
 	</script>
 </body>

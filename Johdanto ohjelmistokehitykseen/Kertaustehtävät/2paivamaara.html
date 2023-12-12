@@ -25,8 +25,8 @@ Ohjelma kysyy käyttäjältä päivämäärän muodossa vvvv-pp-kk ja muuntaa se
 
 		function muunna() {
 			let paivamaara = document.getElementById("paivamaara").value; // 2023-05-10
-
-			document.getElementById("vastaus").innerHTML = "Kirjoita vastaus tänne";
+			let purku = paivamaara.split("-");
+			document.getElementById("vastaus").innerHTML = purku[2] + "." + purku[1] + "." + purku[0];
 		}
 	</script>
 </body>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Eläinvakuutus</title>
+<!--
+Eläinvakuutuksesta käynnin omavastuu on 70 euroa, jonka ylittävältä osalta 
+saa vakuutuksesta korvausta 40%. Ohjelma kertoo, paljonko asiakas itse maksaa 
+eläinlääkäri käynnistä ja paljonko vakuutus korvaa siitä.
+ -->
+</head>
+
+<body>
+	<h3>Eläinvakuutus</h3>
+	<form>
+		Maksu <input type="text" id="maksu" size="6">
+		<input type="button" id="painike" value="Laske" onclick="laske()">
+	</form>
+
+	<p id="vastaus"></p>
+
+	<script>
+		function laske() {
+			let omavastuu = 70;
+			let korvaus = 0;
+			let maksu = Number(document.getElementById("maksu").value);
+			if (maksu > omavastuu) {
+				korvaus = korvaus + ((maksu - omavastuu) * 0.4);
+				maksu = maksu - korvaus;
+				document.getElementById("vastaus").innerHTML = "Itse maksettavaa jää " + maksu.toFixed(2) + "<br>" + "Vakuutusyhtiö korvaa " + korvaus.toFixed(2);
+			} else {
+				document.getElementById("vastaus").innerHTML = "Itse maksettavaa jää " + maksu.toFixed(2) + "<br>" + "Vakuutusyhtiö korvaa " + korvaus.toFixed(2);
+			}
+			
+		}
+	</script>
+</body>
+
+</html>

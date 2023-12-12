@@ -13,8 +13,18 @@
 
 	<script>
 		function aikaero() {
-		
-			document.getElementById("vastaus").innerHTML = "Kirjoita vastaus tänne";
+			let aikanyt = new Date();
+			let tunnit = aikanyt.getHours();
+			let minuutit = aikanyt.getMinutes();
+			let suomessa = tunnit + ":" + minuutit;
+			let tunnits = tunnit + 7;
+			let sydneyssa = "";
+			if (tunnits > 23) {
+				tunnits = tunnits - 22;
+			}
+			sydneyssa = tunnits + ":" + minuutit;
+			document.getElementById("vastaus").innerHTML = "<p>Kello on Suomessa " + suomessa + "<br>" +
+				"Kello on Sydneyssä " + sydneyssa + "</p>";
 		}
 
 		aikaero();

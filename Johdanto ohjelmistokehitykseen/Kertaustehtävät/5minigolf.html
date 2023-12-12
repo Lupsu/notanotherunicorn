@@ -26,9 +26,25 @@ b)	 taulukossa olevien pelien keskiarvon
 
 	<script>
 		let minigolf = [23, 19, 37, 20, 21, 30, 26, 24];
-
 		function kerro() {
-		
+			let summa = 0;
+			let pienin = minigolf[0];
+			let suurin = pienin;
+		for (let i = 0; i < minigolf.length; i++) {
+			if (minigolf[i] < pienin) {
+				pienin = minigolf[i];
+			} else if (minigolf[i] > suurin) {
+				suurin = minigolf[i];
+			} else {
+				pienin = pienin;
+				suurin = suurin;
+			}
+			summa = summa + minigolf[i];
+		}
+		let keskiarvo = summa / minigolf.length;
+		document.getElementById("pieninsuurin").innerHTML = "<p>Pienin peli on " + pienin + "<br>" +
+			"Suurin peli on " + suurin;
+		document.getElementById("keskiarvo").innerHTML = "Pelien keskiarvo on " + keskiarvo;
 			
 		}
 

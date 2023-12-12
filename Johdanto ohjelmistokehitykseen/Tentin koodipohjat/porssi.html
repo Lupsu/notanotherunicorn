@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pörssikurssit</title>
+
+</head>
+
+<body>
+    <h3>Pörssikurssit</h3>
+
+    <form>
+        <p>
+            <label>Yritys</label>
+            <input type="text" id="yritys" size="15">
+        </p>
+        <p>
+            <label>Ostot</label>
+            <input type="text" id="maara" size="4"> kpl
+        </p>
+
+        <input type="button" id="painike1" value="Listaa" onclick="listaa()">&nbsp;&nbsp;
+        <input type="button" id="painike2" value="Laske" onclick="laske()">&nbsp;&nbsp;
+        <input type="button" id="painike3" value="Kallein ostohinta" onclick="kallein()">
+    </form>
+
+    <p id="vastaus"></p>
+
+    <script>
+        let kurssit = [
+            { yritys: "Nordea", osto: 10.354, myynti: 10.356 },
+            { yritys: "Sampo A", osto: 39.815, myynti: 39.820 },
+            { yritys: "Fortum", osto: 12.920, myynti: 12.945 },
+            { yritys: "Neste", osto: 34.99, myynti: 35.01 },
+            { yritys: "Nokia", osto: 3.2185, myynti: 3.2195 }
+        ];
+
+        function listaa() {
+            teksti = "";
+            for (let i = 0; i < kurssit.length; i++) {
+                teksti = teksti + "<p>" + kurssit[i].yritys;
+                teksti = teksti + "<br>" + "Osto: " + kurssit[i].osto;
+                teksti = teksti + "<br>" + "Myynti: " + kurssit[i].myynti + "</p>";
+            }
+            document.getElementById("vastaus").innerHTML = teksti;
+        }
+
+        function laske() {
+            let etsittava = document.getElementById("yritys").value;
+            let loytyi = false;
+            let paikka = 0;
+            let maarat = document.getElementById("maara").value;
+            let summa = 0;
+            while (loytyi == false && paikka < kurssit.length) {
+                if (kurssit[paikka].yritys == etsittava) {
+                    loytyi = true;
+                } else {
+                    paikka = paikka + 1;
+                }
+            }
+            if (loytyi == true) {
+                summa = summa + (maarat * kurssit[paikka].osto);
+                document.getElementById("vastaus").innerHTML = etsittava + " osakkeiden osto maksaa " + summa.toFixed(2) + " euroa"
+            } else {
+                document.getElementById("vastaus").innerHTML = "Yrityksellä " + etsittava + " ei ole kurssitietoja"
+            }
+        }
+
+        function kallein() {
+            kalleinosto = 0;
+            yritysnimi = "";
+            for (let i = 0; i < kurssit.length; i++) {
+                if (kurssit[i].osto > kalleinosto) {
+                    kalleinosto = kurssit[i].osto;
+                    yritysnimi = kurssit[i].yritys;
+                }
+            }
+            document.getElementById("vastaus").innerHTML = "Kallein ostokurssi on " + kalleinosto + " " + yritysnimi;
+        }
+
+    </script>
+</body>
+
+</html>

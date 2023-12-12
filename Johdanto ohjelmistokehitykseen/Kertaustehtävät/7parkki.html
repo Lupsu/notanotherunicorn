@@ -32,13 +32,22 @@ Funktio laskee ja palauttaa return-lauseella parkkimaksun suuruuden. Parametrina
 		function laske() {
 			// Lomakekentän arvo
 			let parkkiaika = Number(document.getElementById("parkkiaika").value);
-
+			let parkkimaksu = laskeMaksu(parkkiaika);
 			
-			document.getElementById("vastaus").innerHTML = "Kirjoita vastaus tänne";
+			document.getElementById("vastaus").innerHTML = "Parkkimaksu on " + parkkimaksu.toFixed(0) + " euroa.";
 		}
 
 		// Funktio selvittää parkkiajan perusteella parkkimaksun
 		function laskeMaksu(parkkiaika) {
+			let maksimi = 30;
+			let tuntihinta = 4;
+			let parkkimaksu = 0;
+			parkkimaksu = parkkiaika * tuntihinta;
+			if (parkkimaksu > maksimi) {
+				return maksimi;
+			} else {
+				return parkkimaksu;
+			}
 	
 		}
 	</script>

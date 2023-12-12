@@ -29,8 +29,17 @@ Ohelma kysyy käyttäjältä syntymäkuukauden numeron ja kertoo vuodenajan, jol
 		function kerroVuodenaika() {
 			// Lomakekentän kuukausi arvo kokonaislukuna
 			let kuukausi = Number(document.getElementById("skuukausi").value);
-			
-			document.getElementById("vastaus").innerHTML = "Kirjoita vastaus tänne";
+			let vuodenaika = "";
+			if (kuukausi > 2 && kuukausi < 6) {
+				vuodenaika = "kevät";
+			} else if (kuukausi > 5 && kuukausi < 9) {
+				vuodenaika = "kesä";
+			} else if (kuukausi > 8 && kuukausi < 12) {
+				vuodenaika = "syksy";
+			} else {
+				vuodenaika = "talvi";
+			}
+			document.getElementById("vastaus").innerHTML = "Vuodenaika on " + vuodenaika;
 		}
 	</script>
 </body>

@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kellotarkastus</title>
+    <style>
+        label {
+            display: block;
+            width: 5em;
+            float: left;
+        }
+    </style>
+    <!-- 
+Tarkasta, että alku- ja loppuaika ovat kellonaikoja hh:mm. Käytä aikojen tarkastukseen funktiota tarkastaKello(kello).
+Funktio palauttaa true, jos aika on oikein, muuten false. 
+ -->
+</head>
+
+<body>
+    <h3>Joulupukki</h3>
+
+    <form>
+        <p>
+            <label>Saapui</label>
+            <input type="text" id="saapui" size="5">
+        </p>
+        <p>
+            <label>Lähti</label>
+            <input type="text" id="lahti" size="5">
+        </p>
+        <p>
+            <input type="button" id="painike" value="Tarkasta" onclick="tarkasta()">
+        </p>
+    </form>
+
+    <!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+    <p id="vastaus"></p>
+
+    <script>
+
+        function tarkasta() {
+            // Lue lomakekenttien arvot
+            let kello = document.getElementById("saapui").value;
+            let saapuitarkastus = tarkastaAika(kello);
+            kello = document.getElementById("lahti").value;
+            let lahtitarkastus = tarkastaAika(kello);
+            if (saapuitarkastus == true && lahtitarkastus == true) {
+                document.getElementById("vastaus").innerHTML = "Kellonajat ovat oikein"
+            } else {
+                document.getElementById("vastaus").innerHTML = "Kellonaika on virheellinen"
+            }
+            }
+
+        function tarkastaAika(kello) {
+          let aika = kello.split(":");
+          let onkoaika = false;
+          if (aika[0] >= 0 && aika[0] <= 23 && aika[1] >= 0 && aika[1] <= 59) {
+            onkoaika = true;
+            return onkoaika;
+          }
+           }
+    </script>
+</body>
+
+</html>
